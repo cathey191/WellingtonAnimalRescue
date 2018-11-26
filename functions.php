@@ -27,7 +27,7 @@ register_default_headers( array(
 	'defaultImage' => array(
 		'url'           => get_template_directory_uri() . '/assets/img/default.jpg',
 		'thumbnail_url' => get_template_directory_uri() . '/assets/img/default.jpg',
-		'description'   => __( 'defaultImage', 'wrrtheme' )
+		'description'   => __( 'defaultImage', 'wartheme' )
 	)
 ) );
 $defaultImage = array(

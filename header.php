@@ -28,7 +28,7 @@
           ) );
         ?>
         <div class="form-inline my-2 my-lg-0">
-          <button class="btn blue-btn my-2 my-sm-0" type="submit">Search</button>
+          <a class="btn blue-btn my-2 my-sm-0" href="https://givealittle.co.nz/org/wellingtonrabbitrescue">Donate</a>
         </div>
       </div>
     </nav>
