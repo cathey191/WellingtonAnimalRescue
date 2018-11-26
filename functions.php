@@ -12,6 +12,7 @@ function addCustomThemeStyles () {
 
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');
 
+// Init functions
 function initFunctions() {
   add_theme_support('menus');
   register_nav_menu('header_nav', 'This is the navigation at the top of the page');
@@ -20,9 +21,11 @@ add_action('init', 'initFunctions');
 
 register_nav_menu('header_nav', 'This is the navigation which appears at the top of the page');
 
+// Bootstrap classes for nav
 require_once get_template_directory() . '/addons/class-wp-bootstrap-navwalker.php';
 require_once get_template_directory() . '/addons/class-wp-comments-walker.php';
 
+// Register images
 register_default_headers( array(
 	'defaultImage' => array(
 		'url'           => get_template_directory_uri() . '/assets/img/default.jpg',
@@ -37,3 +40,6 @@ $defaultImage = array(
   'header-text'            => false
 );
 add_theme_support( 'custom-header', $defaultImage );
+
+// Customizer
+require get_parent_theme_file_path('./addons/custom-customizer.php');
