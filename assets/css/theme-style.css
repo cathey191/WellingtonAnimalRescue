@@ -1,0 +1,29 @@
+body {
+  background-color: #FDFAFA;
+}
+
+.navbar {
+  background-color: #DC544B;
+}
+
+.blue-btn {
+  background-color: #2969A9;
+  color: #FDFAFA;
+}
+
+.navbar-brand{
+  font-family: 'Pacifico', cursive;
+  /* font-size: 25px; */
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar{
+  font-family: 'Niramit', sans-serif;
+  padding: 0px;
+  /* font-size: 23px; */
+}
+
+.btn {
+  padding: 0rem .75rem;
+}
