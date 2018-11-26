@@ -5,6 +5,11 @@ body {
   font-family: 'Niramit', sans-serif;
 }
 
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 'bold';
+}
+
 /* Navbar */
 .navbar {
   background-color: #DC544B;
@@ -54,8 +59,17 @@ body {
   background-size: cover;
 }
 
+.home-page-container {
+  padding-top: 2em;
+}
+
+.home-text {
+  min-height: 450px;
+}
+
 .home-image-size{
   width: 100%;
+    min-height: 450px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

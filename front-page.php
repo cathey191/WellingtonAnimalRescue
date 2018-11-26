@@ -14,20 +14,20 @@
       endif;
 
       $homePageData = array();
-      if (get_theme_mod('front_page_title_setting') != false && get_theme_mod('front_page_textarea_setting') != false ) {
+      if (get_theme_mod('front_page_title_setting') != false || get_theme_mod('front_page_textarea_setting') != false ) {
         array_push($homePageData, get_theme_mod('front_page_title_setting'), get_theme_mod('front_page_textarea_setting'));
       }
 
 
       if (sizeof($homePageData) === 2):
     ?>
-        <div class="container">
+        <div class="container home-page-container">
           <div class="row">
-            <div class="col-6">
+            <div class="col-sm-6 home-text">
               <h2><?= get_theme_mod('front_page_title_setting') ?></h2>
               <p><?= get_theme_mod('front_page_textarea_setting') ?></p>
             </div>
-            <div class="col-6 home-image-size"  style="background-image: url(<?= $homeImage; ?>);">
+            <div class="d-none d-sm-block col-6 home-image-size">
             </div>
           </div>
         </div>
