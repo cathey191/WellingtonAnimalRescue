@@ -22,3 +22,18 @@ register_nav_menu('header_nav', 'This is the navigation which appears at the top
 
 require_once get_template_directory() . '/addons/class-wp-bootstrap-navwalker.php';
 require_once get_template_directory() . '/addons/class-wp-comments-walker.php';
+
+register_default_headers( array(
+	'defaultImage' => array(
+		'url'           => get_template_directory_uri() . '/assets/img/default.jpg',
+		'thumbnail_url' => get_template_directory_uri() . '/assets/img/default.jpg',
+		'description'   => __( 'defaultImage', 'wrrtheme' )
+	)
+) );
+$defaultImage = array(
+  'default-image'          => get_template_directory_uri() . '/assets/img/default.jpg',
+  'width'                  => 1280,
+  'height'                 => 720,
+  'header-text'            => false
+);
+add_theme_support( 'custom-header', $defaultImage );

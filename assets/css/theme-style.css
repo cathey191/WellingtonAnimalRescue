@@ -19,8 +19,16 @@ body {
   color: #FDFAFA;
 }
 
+.navbar-brand:hover {
+  color: #3A171A;
+}
+
 .navbar-nav .nav-link{
   color: #FDFAFA;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #3A171A;
 }
 
 /* Buttons */
@@ -31,4 +39,12 @@ body {
 .blue-btn {
   background-color: #2969A9;
   color: #FDFAFA;
+}
+
+/* Front page */
+.front-page-banner{
+  height: 95vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
