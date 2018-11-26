@@ -1,29 +1,34 @@
+/* Reset */
 body {
   background-color: #FDFAFA;
+  color: #3A171A;
+  font-family: 'Niramit', sans-serif;
 }
 
+/* Navbar */
 .navbar {
   background-color: #DC544B;
+  font-family: 'Roboto', sans-serif;
+  padding: 0px;
+}
+
+.navbar-brand{
+  font-family: 'Pacifico', cursive;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #FDFAFA;
+}
+
+.navbar-nav .nav-link{
+  color: #FDFAFA;
+}
+
+/* Buttons */
+.btn {
+  padding: 0rem .75rem;
 }
 
 .blue-btn {
   background-color: #2969A9;
   color: #FDFAFA;
-}
-
-.navbar-brand{
-  font-family: 'Pacifico', cursive;
-  /* font-size: 25px; */
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.navbar{
-  font-family: 'Niramit', sans-serif;
-  padding: 0px;
-  /* font-size: 23px; */
-}
-
-.btn {
-  padding: 0rem .75rem;
 }

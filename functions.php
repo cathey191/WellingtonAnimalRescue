@@ -17,3 +17,8 @@ function initFunctions() {
   register_nav_menu('header_nav', 'This is the navigation at the top of the page');
 }
 add_action('init', 'initFunctions');
+
+register_nav_menu('header_nav', 'This is the navigation which appears at the top of the page');
+
+require_once get_template_directory() . '/addons/class-wp-bootstrap-navwalker.php';
+require_once get_template_directory() . '/addons/class-wp-comments-walker.php';

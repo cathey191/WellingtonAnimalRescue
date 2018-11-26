@@ -8,28 +8,27 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="<?= bloginfo('home');?>"><?= bloginfo('name'); ?></a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <div class="form-inline my-2 my-lg-0">
-            <button class="btn blue-btn my-2 my-sm-0" type="submit">Search</button>
-          </div>
+        <?php
+          wp_nav_menu( array(
+            'theme_location'    => 'header_nav',
+            'depth'             => 2,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse',
+            'container_id'      => 'bs-example-navbar-collapse-1',
+            'menu_class'        => 'nav navbar-nav',
+            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'            => new WP_Bootstrap_Navwalker(),
+          ) );
+        ?>
+        <div class="form-inline my-2 my-lg-0">
+          <button class="btn blue-btn my-2 my-sm-0" type="submit">Search</button>
         </div>
       </div>
     </nav>
