@@ -42,7 +42,7 @@ $defaultImage = array(
 add_theme_support( 'custom-header', $defaultImage );
 add_theme_support( 'post-thumbnails' );
 
-// Customizer
+// Customizers
 require get_parent_theme_file_path('./addons/custom-customizer.php');
 require get_parent_theme_file_path('./addons/custom-metaboxes.php');
 require get_parent_theme_file_path('./addons/custom-post-types.php');

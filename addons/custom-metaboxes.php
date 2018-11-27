@@ -8,15 +8,40 @@ $metaBoxes = array(
     'priority' => 'high',
     'fields' => array(
       'animalBreed' => array(
-        'title' => 'Animal Breed',
+        'title' => 'Breed',
         'type' => 'text'
       ),
       'animalAge' => array(
-        'title' => 'Animal Age',
+        'title' => 'Age',
         'type' => 'number'
+      ),
+      'animialBlurb' => array(
+        'title' => 'Blurb about the animal',
+        'type' => 'textarea'
+      ),
+      'animialCare' => array(
+        'title' => 'Care Received',
+        'type' => 'textarea'
       )
     )
-  )
+  ),
+  'bonded' => array (
+    'title' => 'Bonded Information',
+    'applicableto' => 'animal',
+    'location' => 'normal',
+    'priority' => 'low',
+    'fields' => array(
+      'animalPaired' => array(
+        'title' => 'Is the animal bonded with another?',
+        'type' => 'radio',
+        'options' => array('Yes', 'No')
+      ),
+      'animalPairedWith' => array(
+        'title' => 'Who is the animal bonded with?',
+        'type' => 'text'
+      )
+    )
+  ),
 );
 
 function add_custom_fields() {
@@ -31,6 +56,18 @@ function add_custom_fields() {
 
 add_action('admin_init', 'add_custom_fields');
 
+// Change Enter Title to relevent text
+function change_default_title( $title ){
+  $screen = get_current_screen();
+
+  if  ( $screen->post_type == 'animal' ) {
+    return 'Enter Animal Name Here';
+  }
+}
+
+add_filter( 'enter_title_here', 'change_default_title' );
+
+// Displaying metaboxes
 function show_metaboxes($post, $args) {
   global $metaBoxes;
   $fields = $metaBoxes[$args['id']]['fields'];
@@ -41,16 +78,27 @@ function show_metaboxes($post, $args) {
     foreach ($fields as $id => $field) {
       switch ($field['type']) {
         case 'text':
-          $output .= '<label for="'.$id.'">'.$field['title'].'</label>';
-          $output .= '<input type="text" name="'.$id.'" class="customField" value="'.$customValues[$id][0].'">';
+          $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+          $output .= '<input type="text" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
           break;
         case 'number':
-          $output .= '<label for="'.$id.'">'.$field['title'].'</label>';
-          $output .= '<input type="number" name="'.$id.'" class="customField" value="'.$customValues[$id][0].'">';
+          $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+          $output .= '<input type="number" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
+          break;
+        case 'textarea':
+          $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+          $output .= '<textarea name="'.$id.'" value="'.$customValues[$id][0].'"></textarea><br>';
+          break;
+        case 'radio':
+          $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+          $options = $field['options'];
+          foreach ($options as $option) {
+            $output .= '<input type="radio" name="'.$id.'" value="'.$option.'">'.$option.'<br>';
+          }
           break;
         default:
-          $output .= '<label for="'.$id.'">'.$field['title'].'</label>';
-          $output .= '<input type="text" name="'.$id.'" class="customField" value="'.$customValues[$id][0].'">';
+          $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
+          $output .= '<input type="text" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
           break;
       }
     }
@@ -58,6 +106,7 @@ function show_metaboxes($post, $args) {
   echo $output;
 }
 
+// Saving if required
 function save_metaboxes($postID) {
   global $metaBoxes;
   if (!wp_verify_nonce( $_POST['post_format_meta_box_nonce'], basename(__FILE__) )) {
@@ -75,7 +124,7 @@ function save_metaboxes($postID) {
   }
 
   $post_type = get_post_type();
-  
+
   foreach ($metaBoxes as $id => $metaBox) {
     if ($metaBox['applicableto'] == $post_type) {
       $fields = $metaBoxes[$id]['fields'];
@@ -83,7 +132,6 @@ function save_metaboxes($postID) {
         $oldValue = get_post_meta($postID, $id, true);
         $newValue = $_POST[$id];
         if ($newValue && $newValue != $oldValue) {
-          // This saves and updates
           update_post_meta($postID, $id, $newValue);
         } elseif ($newValue == '' && $oldValue || !isset($_POST[$id])) {
           delete_post_meta($postID, $id, $oldValue);
