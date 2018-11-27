@@ -25,3 +25,13 @@ function add_animal_post_type() {
 }
 
 add_action('init', 'add_animal_post_type');
+
+
+function hide_posts_types() {
+  ?>
+    <style type="text/css" media="screen">
+      #menu-posts, #menu-comments {display:none;}
+    </style>
+  <?php
+}
+add_action('admin_head', 'hide_posts_types');

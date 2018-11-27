@@ -2,7 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title><?= get_the_title(); ?></title>
+    <title>
+      <?php
+        if(is_front_page() == 1) {
+          echo bloginfo('name');
+        } else {
+          echo get_the_title();
+        }
+      ?>
+    </title>
     <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico|Roboto" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
