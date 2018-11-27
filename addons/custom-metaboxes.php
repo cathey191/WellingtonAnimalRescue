@@ -93,7 +93,11 @@ function show_metaboxes($post, $args) {
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
           $options = $field['options'];
           foreach ($options as $option) {
-            $output .= '<input type="radio" name="'.$id.'" value="'.$option.'">'.$option.'<br>';
+            $checked = '';
+            if ($customValues['animalPaired']['0'] == $option) {
+              $checked = 'checked="checked"';
+            }
+            $output .= '<input type="radio" name="'.$id.'" value="'.$option.'" '.$checked.'>'.$option.'<br>';
           }
           break;
         default:
