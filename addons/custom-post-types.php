@@ -5,7 +5,8 @@ function add_animal_post_type() {
     'name' => _x('Animals', 'post type name', 'wartheme'),
     'singular_name' => _x('Animal', 'post type name', 'wartheme'),
     'add_new' => _x('Add Animal', 'adding a new animal', 'wartheme'),
-    'add_new_item' => _x('Add Animal', 'adding a new animal', 'wartheme')
+    'add_new_item' => _x('Add Animal', 'adding a new animal', 'wartheme'),
+    'edit_item' => _x('Animal', 'edit animal', 'wartheme'),
   );
 
   $args = array(
