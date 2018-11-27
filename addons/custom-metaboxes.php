@@ -12,7 +12,7 @@ $metaBoxes = array(
         'type' => 'text'
       ),
       'animalAge' => array(
-        'title' => 'Age',
+        'title' => 'Age in years',
         'type' => 'number'
       ),
       'animialBlurb' => array(
@@ -87,7 +87,7 @@ function show_metaboxes($post, $args) {
           break;
         case 'textarea':
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-          $output .= '<textarea name="'.$id.'" value="'.$customValues[$id][0].'"></textarea><br>';
+          $output .= '<textarea name="'.$id.'" >'.$customValues[$id][0].'</textarea><br>';
           break;
         case 'radio':
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
@@ -128,9 +128,11 @@ function save_metaboxes($postID) {
   foreach ($metaBoxes as $id => $metaBox) {
     if ($metaBox['applicableto'] == $post_type) {
       $fields = $metaBoxes[$id]['fields'];
+
       foreach ($fields as $id => $field) {
         $oldValue = get_post_meta($postID, $id, true);
         $newValue = $_POST[$id];
+
         if ($newValue && $newValue != $oldValue) {
           update_post_meta($postID, $id, $newValue);
         } elseif ($newValue == '' && $oldValue || !isset($_POST[$id])) {
