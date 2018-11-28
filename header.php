@@ -11,7 +11,7 @@
         }
       ?>
     </title>
-    <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Niramit:400,700|Pacifico|Roboto:400,500" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
   </head>

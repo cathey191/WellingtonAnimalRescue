@@ -2,18 +2,19 @@
 body {
   background-color: #FDFAFA;
   color: #3A171A;
-  font-family: 'Niramit', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 'bold';
+  font-family: 'Niramit', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 /* Navbar */
 .navbar {
   background-color: #DC544B;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Niramit', sans-serif;
   padding: 0px;
 }
 
@@ -34,6 +35,18 @@ h2 {
 
 .navbar-nav .nav-link:hover {
   color: #3A171A;
+}
+
+/* Cards */
+.card {
+  background-color: #F2F2F6;
+  border: 1px solid #2969A9;
+  color: #3A171A;
+  margin: 2em 0em;
+}
+
+.card-title {
+  font-weight: 500;
 }
 
 /* Buttons */
