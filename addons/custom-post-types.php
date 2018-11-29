@@ -27,7 +27,6 @@ function add_animal_post_type() {
 
 add_action('init', 'add_animal_post_type');
 
-
 function hide_posts_types() {
   ?>
     <style type="text/css" media="screen">

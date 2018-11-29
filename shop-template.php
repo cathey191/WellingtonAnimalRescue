@@ -1,5 +1,5 @@
 <?php
-  /* Template Name: Grid Layout Template */
+  /* Template Name: Shop Template */
   get_header();
 ?>
       <div class="container">
@@ -9,17 +9,16 @@
         <?php
 
           $args = array (
-            'post_type' => 'animal'
+            'post_type' => 'product'
           );
 
-          $animalsPost = new WP_Query($args);
+          $posts = new WP_Query($args);
 
-          if ($animalsPost->have_posts()):
-            while ($animalsPost->have_posts()): $animalsPost->the_post();
+
+          if ($posts->have_posts()):
+            while ($posts->have_posts()): $posts->the_post();
               $id = get_the_id();
               $blurb = get_post_meta($id, 'allBlurb', true);
-
-                  // get_template_part('content', get_post_format()); - Wigs out the card sizing
         ?>
 
           <div class="card w-100" style="width: 18rem;">
@@ -30,8 +29,8 @@
             ?>
             <div class="card-body">
               <h5 class="card-title"><?php the_title(); ?></h5>
-              <?php if ($blurb): ?>
-                <p class="card-text"><?= wp_trim_words( $blurb , '20' ); ?></p>
+              <?php if (the_content()): ?>
+                <p class="card-text"><?= wp_trim_words( the_content() , '20' ); ?></p>
               <?php endif; ?>
               <a class="btn blue-btn" href="<?= esc_url(get_permalink()); ?>">Read More</a>
             </div>
