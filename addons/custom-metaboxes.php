@@ -15,7 +15,7 @@ $metaBoxes = array(
         'title' => 'Age in years',
         'type' => 'number'
       ),
-      'animialBlurb' => array(
+      'allBlurb' => array(
         'title' => 'Blurb about the animal',
         'type' => 'textarea'
       ),

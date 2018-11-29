@@ -21,7 +21,7 @@
 
       if (sizeof($homePageData) === 2):
     ?>
-        <div class="container home-page-container">
+        <div class="container">
           <div class="row">
             <div class="col-sm-6 home-text">
               <h2><?= get_theme_mod('front_page_title_setting') ?></h2>

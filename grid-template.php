@@ -17,11 +17,11 @@
           if ($animalsPost->have_posts()):
             while ($animalsPost->have_posts()): $animalsPost->the_post();
               $id = get_the_id();
-              $blurb = get_post_meta($id, 'animialBlurb', true);
-                if ($blurb):
+              $blurb = get_post_meta($id, 'allBlurb', true);
+
+                  // get_template_part('content', get_post_format()); - Wigs out the card sizing
         ?>
 
-        <!-- <div class="col-sm-6 col-md-4"> -->
           <div class="card w-100" style="width: 18rem;">
             <?php
               if( has_post_thumbnail()) {
@@ -30,14 +30,14 @@
             ?>
             <div class="card-body">
               <h5 class="card-title"><?php the_title(); ?></h5>
-              <p class="card-text"><?= wp_trim_words( $blurb , '20' ); ?></p>
+              <?php if ($blurb): ?>
+                <p class="card-text"><?= wp_trim_words( $blurb , '20' ); ?></p>
+              <?php endif; ?>
               <a class="btn blue-btn" href="<?= esc_url(get_permalink()); ?>">Read More</a>
             </div>
           </div>
-        <!-- </div> -->
 
         <?php
-              endif;
             endwhile;
           endif;
         ?>

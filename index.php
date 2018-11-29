@@ -1,30 +1,22 @@
 <?php
   get_header();
+
+  $id = get_the_id();
+  $blurb = get_post_meta($id, 'allBlurb', true);
 ?>
       <div class="container">
 
-        <?php
-          if (have_posts()):
-            while (have_posts()): the_post();
-        ?>
-
-
-        <div class="card" style="width: 18rem;">
-          <?php
-            if( has_post_thumbnail()) {
-              the_post_thumbnail('thumbnail', ['class'=>'card-img-top img-fluid', 'alt'=> 'Image of animal']);
-            };
-          ?>
-          <div class="card-body">
-            <h5 class="card-title"><?php the_title(); ?></h5>
-            <a class="btn btn-primary" href="<?= esc_url(get_permalink()); ?>">Read More</a>
+        <div class="row">
+          <?php if( has_post_thumbnail()): ?>
+            <div class="d-none d-sm-block col-6 ">
+              <?php the_post_thumbnail('thumbnail', ['class'=>'card-img-top img-fluid', 'alt'=> 'Image of animal']) ?>
+            </div>
+          <?php endif; ?>
+          <div class="col-sm-6 home-text">
+            <h2><?= the_title(); ?></h2>
+            <p><?= $blurb ?></p>
           </div>
         </div>
-
-        <?php
-            endwhile;
-          endif;
-        ?>
 
 
       </div>
