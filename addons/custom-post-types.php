@@ -54,6 +54,33 @@ function add_care_post_type() {
 
 add_action('init', 'add_care_post_type');
 
+function add_vet_post_type() {
+  $labels = array (
+    'name' => _x('Vets', 'post type name', 'wartheme'),
+    'singular_name' => _x('Vet', 'post type name', 'wartheme'),
+    'add_new' => _x('Add Vet', 'adding a new Vet', 'wartheme'),
+    'add_new_item' => _x('Add Vet', 'adding a new Vet', 'wartheme'),
+    'edit_item' => _x('Edit Vet', 'edit Vet', 'wartheme'),
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'description' => 'Different Vets',
+    'public' => true,
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_nav_menus' => true,
+    'menu_position' => 4,
+    'menu_icon' => 'dashicons-portfolio',
+    'supports' => array( 'title' ),
+    'query_var' => true
+  );
+  register_post_type('vet', $args);
+}
+
+add_action('init', 'add_vet_post_type');
+
 function hide_posts_types() {
   ?>
     <style type="text/css" media="screen">

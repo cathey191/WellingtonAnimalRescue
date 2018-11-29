@@ -1,5 +1,5 @@
 <?php
-  /* Template Name: Animal Template */
+  /* Template Name: Adopt Template */
   get_header();
 ?>
       <div class="container">

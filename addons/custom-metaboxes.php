@@ -42,6 +42,26 @@ $metaBoxes = array(
       )
     )
   ),
+  'vets' => array (
+    'title' => 'Vet Information',
+    'applicableto' => 'vet',
+    'location' => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      'streetAddress' => array(
+        'title' => 'Street Address',
+        'type' => 'text'
+      ),
+      'phoneNumber' => array(
+        'title' => 'Phone Number',
+        'type' => 'number'
+      ),
+      'weblink' => array(
+        'title' => 'Website',
+        'type' => 'text'
+      )
+    )
+  )
 );
 
 function add_custom_fields() {
