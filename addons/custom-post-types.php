@@ -6,7 +6,7 @@ function add_animal_post_type() {
     'singular_name' => _x('Animal', 'post type name', 'wartheme'),
     'add_new' => _x('Add Animal', 'adding a new animal', 'wartheme'),
     'add_new_item' => _x('Add Animal', 'adding a new animal', 'wartheme'),
-    'edit_item' => _x('Animal', 'edit animal', 'wartheme'),
+    'edit_item' => _x('Edit Animal', 'edit animal', 'wartheme'),
   );
 
   $args = array(
@@ -26,6 +26,33 @@ function add_animal_post_type() {
 }
 
 add_action('init', 'add_animal_post_type');
+
+function add_care_post_type() {
+  $labels = array (
+    'name' => _x('Care Guide', 'post type name', 'wartheme'),
+    'singular_name' => _x('Care Guide Item', 'post type name', 'wartheme'),
+    'add_new' => _x('Add Care Guide Item', 'adding a new Care Guide Item', 'wartheme'),
+    'add_new_item' => _x('Add Care Guide Item', 'adding a new Care Guide Item', 'wartheme'),
+    'edit_item' => _x('Edit Care Guide Item', 'edit Care Guide Item', 'wartheme'),
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'description' => 'Posts for the Care Guide',
+    'public' => true,
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_nav_menus' => true,
+    'menu_position' => 4,
+    'menu_icon' => 'dashicons-heart',
+    'supports' => array( 'title', 'thumbnail', 'editor' ),
+    'query_var' => true
+  );
+  register_post_type('careGuide', $args);
+}
+
+add_action('init', 'add_care_post_type');
 
 function hide_posts_types() {
   ?>
