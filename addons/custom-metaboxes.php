@@ -61,6 +61,22 @@ $metaBoxes = array(
         'type' => 'text'
       )
     )
+  ),
+  'supporters' => array (
+    'title' => 'Supporter/Sponser Information',
+    'applicableto' => 'supporterSponser',
+    'location' => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      'weblink' => array(
+        'title' => 'Website',
+        'type' => 'text'
+      ),
+      'allBlurb' => array(
+        'title' => 'Blurb about Supporter/Sponser',
+        'type' => 'textarea'
+      )
+    )
   )
 );
 
