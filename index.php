@@ -1,8 +1,5 @@
 <?php
   get_header();
-
-  $id = get_the_id();
-  $blurb = get_post_meta($id, 'allBlurb', true);
 ?>
       <div class="container">
 
@@ -14,7 +11,7 @@
           <?php endif; ?>
           <div class="col-sm-6 home-text">
             <h2><?= the_title(); ?></h2>
-            <p><?= $blurb ?></p>
+            <p><?= the_content(); ?></p>
           </div>
         </div>
 
