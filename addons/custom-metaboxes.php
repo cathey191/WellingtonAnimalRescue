@@ -42,6 +42,42 @@ $metaBoxes = array(
       )
     )
   ),
+  'vets' => array (
+    'title' => 'Vet Information',
+    'applicableto' => 'vet',
+    'location' => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      'streetAddress' => array(
+        'title' => 'Street Address',
+        'type' => 'text'
+      ),
+      'phoneNumber' => array(
+        'title' => 'Phone Number',
+        'type' => 'number'
+      ),
+      'weblink' => array(
+        'title' => 'Website',
+        'type' => 'text'
+      )
+    )
+  ),
+  'supporters' => array (
+    'title' => 'Supporter/Sponser Information',
+    'applicableto' => 'supporterSponser',
+    'location' => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      'weblink' => array(
+        'title' => 'Website',
+        'type' => 'text'
+      ),
+      'allBlurb' => array(
+        'title' => 'Blurb about Supporter/Sponser',
+        'type' => 'textarea'
+      )
+    )
+  )
 );
 
 function add_custom_fields() {

@@ -41,6 +41,14 @@ h2 {
   color: #3A171A;
 }
 
+.dropdown-menu{
+  background-color: #DC544B;
+}
+
+.dropdown-item{
+  color: #FDFAFA;
+}
+
 /* Cards */
 .card {
   background-color: #F2F2F6;
