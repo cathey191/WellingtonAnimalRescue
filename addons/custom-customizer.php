@@ -77,7 +77,7 @@ function custom_theme_customizer( $wp_customize ) {
   ));
 
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'navbar_button_link_control', array(
-    'label'      => __( 'Link for the button', 'wartheme' ),
+    'label'      => __( 'URL Link', 'wartheme' ),
     'section'    => 'navbar_button_section',
     'settings'   => 'navbar_button_link_setting'
   )));
@@ -88,9 +88,31 @@ function custom_theme_customizer( $wp_customize ) {
   ));
 
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'navbar_button_text_control', array(
-    'label'      => __( 'Text for the button', 'wartheme' ),
+    'label'      => __( 'Text', 'wartheme' ),
     'section'    => 'navbar_button_section',
     'settings'   => 'navbar_button_text_setting'
+  )));
+
+  $wp_customize->add_setting('navbar_button_bgcolor_setting', array(
+    'default' => '#2969A9',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'navbar_button_bgcolor_control', array(
+    'label'      => __( 'Background Colour', 'wartheme' ),
+    'section'    => 'navbar_button_section',
+    'settings'   => 'navbar_button_bgcolor_setting'
+  )));
+
+  $wp_customize->add_setting('navbar_button_txtcolor_setting', array(
+    'default' => '#FDFAFA',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'navbar_button_txtcolor_control', array(
+    'label'      => __( 'Text Colour', 'wartheme' ),
+    'section'    => 'navbar_button_section',
+    'settings'   => 'navbar_button_txtcolor_setting'
   )));
 }
 
@@ -100,14 +122,20 @@ add_action('customize_register', 'custom_theme_customizer');
 function custom_theme_customizer_styles() {
 
   if ( get_theme_mod( 'front_page_image_setting' ) ) {
-				$front_page_image = get_theme_mod( 'front_page_image_setting' );
-			} else {
-				$front_page_image = get_stylesheet_directory_uri() . '/assets/img/default.jpg';
-			}
+		$front_page_image = get_theme_mod( 'front_page_image_setting' );
+	} else {
+		$front_page_image = get_stylesheet_directory_uri() . '/assets/img/default.jpg';
+	}
+
   ?>
     <style type="text/css">
       .home-image-size {
         background-image: url('<?= $front_page_image; ?>') !important;
+      }
+
+      .cust-btn {
+        background-color: <?= get_theme_mod('navbar_button_bgcolor_setting', '#2969A9'); ?>  !important;
+        color: <?= get_theme_mod('navbar_button_txtcolor_setting', '#FDFAFA'); ?>  !important;
       }
     </style>
   <?php
