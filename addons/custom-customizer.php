@@ -57,6 +57,41 @@ function custom_theme_customizer( $wp_customize ) {
     'settings'   => 'front_page_image_setting',
     'context'    => 'your_setting_context'
   )));
+
+  // Navbar
+  $wp_customize->add_panel('navbar_data', array(
+    'title' => __('Navigation Bar', 'wartheme'),
+    'priority' => 30,
+    'description' => 'This panel holds information that will be on navigation bar'
+  ));
+
+  $wp_customize->add_section('navbar_button_section', array(
+    'title' => __('Rigth Side Button', 'wartheme'),
+    'priority' => 20,
+    'panel' => 'navbar_data'
+  ));
+
+  $wp_customize->add_setting('navbar_button_link_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'navbar_button_link_control', array(
+    'label'      => __( 'Link for the button', 'wartheme' ),
+    'section'    => 'navbar_button_section',
+    'settings'   => 'navbar_button_link_setting'
+  )));
+
+  $wp_customize->add_setting('navbar_button_text_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'navbar_button_text_control', array(
+    'label'      => __( 'Text for the button', 'wartheme' ),
+    'section'    => 'navbar_button_section',
+    'settings'   => 'navbar_button_text_setting'
+  )));
 }
 
 add_action('customize_register', 'custom_theme_customizer');

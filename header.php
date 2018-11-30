@@ -34,9 +34,15 @@
             'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
             'walker'            => new WP_Bootstrap_Navwalker(),
           ) );
+
+          $navText = get_theme_mod('navbar_button_text_setting');
+          $navlink = get_theme_mod('navbar_button_link_setting');
+
+          if ($navText && $navlink):
         ?>
-        <div class="form-inline my-2 my-lg-0">
-          <a class="btn blue-btn my-2 my-sm-0" href="https://givealittle.co.nz/org/wellingtonrabbitrescue">Donate</a>
-        </div>
+            <div class="form-inline my-2 my-lg-0">
+              <a class="btn blue-btn my-2 my-sm-0" href="<?= $navlink; ?>"><?= $navText; ?></a>
+            </div>
+          <?php endif; ?>
       </div>
     </nav>
