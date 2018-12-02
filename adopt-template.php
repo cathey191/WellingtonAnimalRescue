@@ -33,7 +33,7 @@
               <?php if ($blurb): ?>
                 <p class="card-text"><?= wp_trim_words( $blurb , '20' ); ?></p>
               <?php endif; ?>
-              <a class="btn blue-btn" href="<?= esc_url(get_permalink()); ?>">Read More</a>
+              <a class="btn blue-btn float-right" href="<?= esc_url(get_permalink()); ?>">Read More</a>
             </div>
           </div>
 

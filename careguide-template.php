@@ -27,7 +27,7 @@
             <div class="card-body">
               <h5 class="card-title"><?php the_title(); ?></h5>
               <p class="card-text"><?= wp_trim_words( get_the_excerpt() , '20' ); ?></p>
-              <a class="btn blue-btn" href="<?= esc_url(get_permalink()); ?>">Read More</a>
+              <a class="btn blue-btn float-right" href="<?= esc_url(get_permalink()); ?>">Read More</a>
             </div>
           </div>
 

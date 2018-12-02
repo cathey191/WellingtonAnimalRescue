@@ -94,7 +94,7 @@ function custom_theme_customizer( $wp_customize ) {
   )));
 
   $wp_customize->add_section('navbar_button_section', array(
-    'title' => __('Rigth Side Button', 'wartheme'),
+    'title' => __('right Side Button', 'wartheme'),
     'priority' => 20,
     'panel' => 'navbar_data'
   ));

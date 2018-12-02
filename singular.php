@@ -1,12 +1,14 @@
 <?php
   get_header();
-
-  $id = get_the_id();
-  $blurb = get_post_meta($id, 'allBlurb', true);
+echo "pass";
 ?>
       <div class="container">
 
-        <?php if (get_post_type() == 'animal'): ?>
+        <?php
+          if (get_post_type() == 'animal'):
+          $id = get_the_id();
+          $blurb = get_post_meta($id, 'allBlurb', true);
+        ?>
 
           <div class="row">
             <?php if( has_post_thumbnail()): ?>
@@ -28,7 +30,7 @@
             </div>
           </div>
 
-        <?php else: ?>
+        <?php else: echo "pass";?>
 
           <div class="row">
             <?php if( has_post_thumbnail()): ?>
