@@ -103,7 +103,7 @@ function add_supporters_post_type() {
     'supports' => array( 'title', 'thumbnail' ),
     'query_var' => true
   );
-  register_post_type('supporterSponser', $args);
+  register_post_type('supporter', $args);
 }
 
 add_action('init', 'add_supporters_post_type');

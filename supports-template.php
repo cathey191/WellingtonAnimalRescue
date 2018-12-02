@@ -20,7 +20,7 @@
               <h2>Sponsors and Supporters</h2>
               <?php
                 $args = array (
-                  'post_type' => 'supporterSponser'
+                  'post_type' => 'supporter'
                 );
 
                 $postType = new WP_Query($args);
@@ -38,7 +38,7 @@
                   ?>
                     <div class="media-body">
                       <h5 class="mt-0"><?php the_title(); ?></h5>
-                      <a class="btn blue-btn" href="<?= get_post_meta($id, 'weblink', true); ?>">View their site</a>
+                      <a href="http://<?= get_post_meta($id, 'weblink', true); ?>"><?= get_post_meta($id, 'weblink', true); ?></a>
                     </div>
                 </div>
 

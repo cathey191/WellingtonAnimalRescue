@@ -64,7 +64,7 @@ $metaBoxes = array(
   ),
   'supporters' => array (
     'title' => 'Supporter/Sponser Information',
-    'applicableto' => 'supporterSponser',
+    'applicableto' => 'supporter',
     'location' => 'normal',
     'priority' => 'high',
     'fields' => array(
