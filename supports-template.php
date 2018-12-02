@@ -12,12 +12,13 @@
 
           <div class="row">
               <div class="col-sm-6 home-text">
+                <h4><?= get_theme_mod('supporter_content_title_setting'); ?></h4>
                 <?php if (get_the_content()): ?>
                   <p><?= the_content(); ?></p>
                 <?php endif; ?>
               </div>
             <div class="col-sm-6 home-text">
-              <h2>Sponsors and Supporters</h2>
+              <h4><?= get_theme_mod('supporter_supporter_title_setting'); ?></h4>
               <?php
                 $args = array (
                   'post_type' => 'supporter'

@@ -3,17 +3,18 @@
 function custom_theme_customizer( $wp_customize ) {
   $wp_customize->remove_section("static_front_page");
 
-  // Front Page
-  $wp_customize->add_panel('front_page_data', array(
-    'title' => __('Front Page', 'wartheme'),
+  // Pages
+  $wp_customize->add_panel('page_data', array(
+    'title' => __('Pages Information', 'wartheme'),
     'priority' => 30,
-    'description' => 'This panel holds information that will be on the home page'
+    'description' => 'This panel holds information that will be on all pages'
   ));
 
+  // Front Page
   $wp_customize->add_section('front_page_text_section', array(
-    'title' => __('Front Page Text', 'wartheme'),
+    'title' => __('Front Page', 'wartheme'),
     'priority' => 20,
-    'panel' => 'front_page_data'
+    'panel' => 'page_data'
   ));
 
   $wp_customize->add_setting('front_page_title_setting', array(
@@ -39,12 +40,6 @@ function custom_theme_customizer( $wp_customize ) {
     'type' => 'textarea',
   )));
 
-  $wp_customize->add_section('front_page_image_section', array(
-    'title' => __('Front Page Image', 'wartheme'),
-    'priority' => 20,
-    'panel' => 'front_page_data'
-  ));
-
   global $defaultImage;
   $wp_customize->add_setting('front_page_image_setting', array(
     'default' => get_stylesheet_directory_uri() . '/assets/img/default.jpg',
@@ -53,10 +48,40 @@ function custom_theme_customizer( $wp_customize ) {
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_image_control', array(
     'label'      => __( 'Upload a photo', 'wartheme' ),
-    'section'    => 'front_page_image_section',
+    'section'    => 'front_page_text_section',
     'settings'   => 'front_page_image_setting',
     'context'    => 'your_setting_context'
   )));
+
+  // Supporter Page
+  $wp_customize->add_section('supporter_page_section', array(
+    'title' => __('Supporter Page', 'wartheme'),
+    'priority' => 20,
+    'panel' => 'page_data'
+  ));
+
+  $wp_customize->add_setting('supporter_content_title_setting', array(
+    'default' => 'Ways to Help',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'supporter_content_title_control', array(
+    'label' => __('Content Title', 'wartheme'),
+    'section' => 'supporter_page_section',
+    'settings' => 'supporter_content_title_setting'
+  )));
+
+  $wp_customize->add_setting('supporter_supporter_title_setting', array(
+    'default' => 'Sponsers and Supporters',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'supporter_supporter_title_control', array(
+    'label' => __('Supporters Title', 'wartheme'),
+    'section' => 'supporter_page_section',
+    'settings' => 'supporter_supporter_title_setting'
+  )));
+
 
   // Navbar
   $wp_customize->add_panel('navbar_data', array(

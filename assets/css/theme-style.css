@@ -9,6 +9,7 @@ h2 {
   font-family: 'Niramit', sans-serif;
   font-weight: 700;
   font-size: 25px;
+  margin-top: 1em;
 }
 
 .row {
@@ -55,11 +56,6 @@ h2 {
 .card-title {
   font-weight: 500;
 }
-
-/* .card-img-top {
-  width: 300px !important;
-  height: auto !important;
-} */
 
 /* Buttons */
 .btn {
