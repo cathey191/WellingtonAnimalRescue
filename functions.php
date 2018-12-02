@@ -41,6 +41,7 @@ $defaultImage = array(
 );
 add_theme_support( 'custom-header', $defaultImage );
 add_theme_support( 'post-thumbnails' );
+add_image_size( 'card-top', 300, 250, array( 'center', 'center' ) ); // Hard crop left top
 add_theme_support( 'woocommerce' );
 
 // Customizers

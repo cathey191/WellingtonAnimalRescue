@@ -56,6 +56,11 @@ h2 {
   font-weight: 500;
 }
 
+/* .card-img-top {
+  width: 300px !important;
+  height: auto !important;
+} */
+
 /* Buttons */
 .btn {
   padding: 0rem .75rem;
@@ -98,4 +103,9 @@ h2 {
 
 .clear-both{
   clear: both;
+}
+
+.mr-3 {
+  width: 64px !important;
+  height: auto !important;
 }
