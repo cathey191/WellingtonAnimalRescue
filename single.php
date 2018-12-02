@@ -1,8 +1,12 @@
 <?php
   get_header();
-echo "pass";
 ?>
       <div class="container">
+
+        <?php
+          if(have_posts()):
+          while(have_posts()): the_post();
+        ?>
 
         <?php
           if (get_post_type() == 'animal'):
@@ -30,8 +34,7 @@ echo "pass";
             </div>
           </div>
 
-        <?php else: echo "pass";?>
-
+        <?php else: ?>
           <div class="row">
             <?php if( has_post_thumbnail()): ?>
               <div class="d-none d-sm-block col-6 ">
@@ -43,8 +46,13 @@ echo "pass";
               <p><?= the_content(); ?></p>
             </div>
           </div>
+
         <?php endif; ?>
 
+        <?php
+          endwhile;
+          endif;
+        ?>
 
       </div>
     <?php wp_footer(); ?>

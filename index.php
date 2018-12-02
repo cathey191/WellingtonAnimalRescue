@@ -2,6 +2,10 @@
   get_header();
 ?>
       <div class="container">
+      <?php
+        if(have_posts()):
+        while(have_posts()): the_post();
+      ?>
 
         <div class="row">
           <?php if( has_post_thumbnail()): ?>
@@ -11,10 +15,16 @@
           <?php endif; ?>
           <div class="col-sm-6 home-text">
             <h2><?= the_title(); ?></h2>
-            <p><?= the_content(); ?></p>
+            <?php if (get_the_content()): ?>
+              <p><?= the_content(); ?></p>
+            <?php endif; ?>
           </div>
         </div>
 
+      <?php
+        endwhile;
+        endif;
+      ?>
 
       </div>
     <?php wp_footer(); ?>
