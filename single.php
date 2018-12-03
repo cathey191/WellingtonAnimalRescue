@@ -31,6 +31,31 @@
                 <span class="font-md">Care Received: </span><?= get_post_meta($id, 'animialCare', true) ?><br>
               </p>
               <?= the_content(); ?>
+              <?php if (get_theme_mod('adoption_content_policy_setting')):?>
+                <div class="col w-100 text-center">
+                  <button class="btn red-btn float-right" data-toggle="modal" data-target="#policyModal" ><?= get_theme_mod('adoption_content_title_setting'); ?></button>
+                </div>
+
+                <div class="modal" id="policyModal" tabindex="-1" role="dialog">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title"><?= get_theme_mod('adoption_content_title_setting'); ?></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p><?= get_theme_mod('adoption_content_policy_setting') ?></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn red-btn" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              <?php endif; ?>
             </div>
           </div>
 
