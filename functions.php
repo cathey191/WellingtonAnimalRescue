@@ -8,6 +8,7 @@ function addCustomThemeStyles () {
   // scripts
   wp_enqueue_script('jquery');
   wp_enqueue_script('bootstrapjs', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '4.1.3', true);
+  wp_enqueue_script('customModal', get_template_directory_uri() . '/assets/js/customModal.js', array(), '4.1.3', true);
 }
 
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');

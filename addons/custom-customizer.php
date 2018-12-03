@@ -82,6 +82,35 @@ function custom_theme_customizer( $wp_customize ) {
     'settings' => 'supporter_supporter_title_setting'
   )));
 
+  // Adoption Page
+  $wp_customize->add_section('adoption_page_section', array(
+    'title' => __('Adoption Page', 'wartheme'),
+    'priority' => 20,
+    'panel' => 'page_data'
+  ));
+
+  $wp_customize->add_setting('adoption_content_title_setting', array(
+    'default' => 'Adoption Policy',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'adoption_content_title_control', array(
+    'label' => __('Content Title', 'wartheme'),
+    'section' => 'adoption_page_section',
+    'settings' => 'adoption_content_title_setting'
+  )));
+
+  $wp_customize->add_setting('adoption_content_policy_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'adoption_content_policy_control', array(
+    'label' => __('Content Text', 'wartheme'),
+    'section' => 'adoption_page_section',
+    'settings' => 'adoption_content_policy_setting',
+    'type' => 'textarea'
+  )));
 
   // Navbar
   $wp_customize->add_panel('navbar_data', array(
@@ -343,6 +372,16 @@ function custom_theme_customizer_styles() {
       .cust-btn {
         background-color: <?= get_theme_mod('navbar_button_bgcolor_setting', '#2969A9'); ?>  !important;
         color: <?= get_theme_mod('navbar_button_txtcolor_setting', '#FDFAFA'); ?>  !important;
+      }
+
+      .red-btn {
+        background-color: <?= get_theme_mod('navbar_bgcolor_setting', '#DC544B'); ?>  !important;
+        color: <?= get_theme_mod('navbar_txtcolor_setting', '#FDFAFA'); ?>  !important;
+      }
+
+      .red-btn:hover {
+        background-color: <?= get_theme_mod('colour_btn_bg_hover_setting', '#3A171A'); ?>  !important;
+        color: <?= get_theme_mod('colour_btn_text_hover_setting', '#FDFAFA'); ?>  !important;
       }
 
       .card {

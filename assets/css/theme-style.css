@@ -82,3 +82,7 @@ h2 {
   width: 64px !important;
   height: auto !important;
 }
+
+.margin-auto {
+  margin: 0 auto;
+}

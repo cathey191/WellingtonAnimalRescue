@@ -4,6 +4,33 @@
 ?>
       <div class="container">
         <h2 class="text-center"><?php the_title(); ?></h2>
+
+        <?php if (get_theme_mod('adoption_content_policy_setting')):?>
+          <div class="col w-100 text-center">
+            <button class="btn red-btn " data-toggle="modal" data-target="#policyModal" ><?= get_theme_mod('adoption_content_title_setting'); ?></button>
+          </div>
+
+          <div class="modal" id="policyModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"><?= get_theme_mod('adoption_content_title_setting'); ?></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p><?= get_theme_mod('adoption_content_policy_setting') ?></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn red-btn" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <?php endif; ?>
+
         <div class="card-columns">
 
         <?php
@@ -17,7 +44,6 @@
           if ($animalsPost->have_posts()):
             while ($animalsPost->have_posts()): $animalsPost->the_post();
 
-                  // get_template_part('content', get_post_format()); - Wigs out the card sizing
         ?>
 
           <div class="card w-100" style="width: 18rem;">
