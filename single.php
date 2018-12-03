@@ -11,7 +11,7 @@
         <?php
           if (get_post_type() == 'animal'):
           $id = get_the_id();
-          $blurb = get_post_meta($id, 'allBlurb', true);
+          $blurb = get_post_meta($id, get_the_content(), true);
         ?>
 
           <div class="row">
@@ -30,7 +30,7 @@
                 <span class="font-md">Age: </span>Around <?= get_post_meta($id, 'animalAge', true) ?> years old<br>
                 <span class="font-md">Care Received: </span><?= get_post_meta($id, 'animialCare', true) ?><br>
               </p>
-              <p><?= $blurb ?></p>
+              <?= the_content(); ?>
             </div>
           </div>
 

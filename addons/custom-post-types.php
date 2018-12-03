@@ -19,7 +19,7 @@ function add_animal_post_type() {
     'show_in_nav_menus' => true,
     'menu_position' => 4,
     'menu_icon' => 'dashicons-carrot',
-    'supports' => array( 'title', 'thumbnail' ),
+    'supports' => array( 'title', 'thumbnail', 'editor' ),
     'query_var' => true
   );
   register_post_type('animal', $args);

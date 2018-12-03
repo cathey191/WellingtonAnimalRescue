@@ -16,8 +16,6 @@
 
           if ($animalsPost->have_posts()):
             while ($animalsPost->have_posts()): $animalsPost->the_post();
-              $id = get_the_id();
-              $blurb = get_post_meta($id, 'allBlurb', true);
 
                   // get_template_part('content', get_post_format()); - Wigs out the card sizing
         ?>
@@ -30,9 +28,7 @@
             ?>
             <div class="card-body">
               <h5 class="card-title"><?php the_title(); ?></h5>
-              <?php if ($blurb): ?>
-                <p class="card-text"><?= wp_trim_words( $blurb , '20' ); ?></p>
-              <?php endif; ?>
+              <p class="card-text"><?= wp_trim_words( get_the_content() , '20' ); ?></p>
               <a class="btn blue-btn float-right" href="<?= esc_url(get_permalink()); ?>">Read More</a>
             </div>
           </div>
