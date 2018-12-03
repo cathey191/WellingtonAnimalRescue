@@ -231,6 +231,57 @@ function custom_theme_customizer( $wp_customize ) {
     'section'    => 'colour_cards_section',
     'settings'   => 'colour_card_text_setting'
   )));
+
+  // buttons Colours
+  $wp_customize->add_section('colour_buttons_section', array(
+    'title' => __('Buttons', 'wartheme'),
+    'priority' => 20,
+    'panel' => 'colour_data'
+  ));
+
+  $wp_customize->add_setting('colour_buttons_bg_setting', array(
+    'default' => '#2969A9',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colour_buttons_bg_control', array(
+    'label'      => __( 'Background', 'wartheme' ),
+    'section'    => 'colour_buttons_section',
+    'settings'   => 'colour_buttons_bg_setting'
+  )));
+
+  $wp_customize->add_setting('colour_buttons_text_setting', array(
+    'default' => '#FDFAFA',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colour_buttons_text_control', array(
+    'label'      => __( 'Text', 'wartheme' ),
+    'section'    => 'colour_buttons_section',
+    'settings'   => 'colour_buttons_text_setting'
+  )));
+
+  $wp_customize->add_setting('colour_btn_bg_hover_setting', array(
+    'default' => '#3A171A',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colour_btn_bg_hover_control', array(
+    'label'      => __( 'Background when hover', 'wartheme' ),
+    'section'    => 'colour_buttons_section',
+    'settings'   => 'colour_btn_bg_hover_setting'
+  )));
+
+  $wp_customize->add_setting('colour_btn_text_hover_setting', array(
+    'default' => '#FDFAFA',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colour_btn_text_hover_control', array(
+    'label'      => __( 'Text when hover', 'wartheme' ),
+    'section'    => 'colour_buttons_section',
+    'settings'   => 'colour_btn_text_hover_setting'
+  )));
 }
 
 add_action('customize_register', 'custom_theme_customizer');
@@ -271,6 +322,16 @@ function custom_theme_customizer_styles() {
         background-color: <?= get_theme_mod('colour_card_bg_setting', '#F2F2F6'); ?>  !important;
         border: 1px solid <?= get_theme_mod('colour_card_border_setting', '#2969A9'); ?>  !important;
         color: <?= get_theme_mod('colour_card_text_setting', '#3A171A'); ?>  !important;
+      }
+
+      .blue-btn {
+        background-color: <?= get_theme_mod('colour_buttons_bg_setting', '#2969A9'); ?>  !important;
+        color: <?= get_theme_mod('colour_buttons_text_setting', '#FDFAFA'); ?>  !important;
+      }
+
+      .blue-btn:hover {
+        background-color: <?= get_theme_mod('colour_btn_bg_hover_setting', '#3A171A'); ?>  !important;
+        color: <?= get_theme_mod('colour_btn_text_hover_setting', '#FDFAFA'); ?>  !important;
       }
     </style>
   <?php

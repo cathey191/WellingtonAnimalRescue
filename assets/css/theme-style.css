@@ -59,16 +59,6 @@ h2 {
   margin-bottom: 1em;
 }
 
-.blue-btn {
-  background-color: #2969A9;
-  color: #FDFAFA;
-}
-
-.blue-btn:hover {
-  background-color: #FDFAFA;
-  color: #3A171A;
-}
-
 /* Front page */
 .front-page-banner{
   height: 95vh;
