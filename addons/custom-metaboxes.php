@@ -59,7 +59,7 @@ $metaBoxes = array(
     )
   ),
   'supporters' => array (
-    'title' => 'Supporter/Sponser Information',
+    'title' => 'Supporter/Sponsor Information',
     'applicableto' => 'supporter',
     'location' => 'normal',
     'priority' => 'high',
@@ -69,7 +69,7 @@ $metaBoxes = array(
         'type' => 'text'
       ),
       'allBlurb' => array(
-        'title' => 'Blurb about Supporter/Sponser',
+        'title' => 'Blurb about Supporter/Sponsor',
         'type' => 'textarea'
       )
     )
