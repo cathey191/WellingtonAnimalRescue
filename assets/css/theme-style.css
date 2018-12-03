@@ -1,6 +1,5 @@
 /* Reset */
 body {
-  color: #3A171A;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -34,14 +33,6 @@ h2 {
 
 .nav-link:hover {
   color: #3A171A;
-}
-
-.dropdown-menu{
-  background-color: #DC544B;
-}
-
-.dropdown-item{
-  color: #FDFAFA;
 }
 
 /* Cards */
