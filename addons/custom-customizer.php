@@ -72,7 +72,7 @@ function custom_theme_customizer( $wp_customize ) {
   )));
 
   $wp_customize->add_setting('supporter_supporter_title_setting', array(
-    'default' => 'Sponsers and Supporters',
+    'default' => 'Sponsors and Supporters',
     'transport' => 'refresh'
   ));
 
@@ -119,7 +119,7 @@ function custom_theme_customizer( $wp_customize ) {
   )));
 
   $wp_customize->add_section('navbar_button_section', array(
-    'title' => __('right Side Button', 'wartheme'),
+    'title' => __('Button', 'wartheme'),
     'priority' => 20,
     'panel' => 'navbar_data'
   ));
@@ -166,6 +166,30 @@ function custom_theme_customizer( $wp_customize ) {
     'label'      => __( 'Text Colour', 'wartheme' ),
     'section'    => 'navbar_button_section',
     'settings'   => 'navbar_button_txtcolor_setting'
+  )));
+
+  // Navbar
+  $wp_customize->add_panel('colour_data', array(
+    'title' => __('Colours', 'wartheme'),
+    'priority' => 30,
+    'description' => 'This panel holds colour information'
+  ));
+
+  $wp_customize->add_section('colour_bg_section', array(
+    'title' => __('Background', 'wartheme'),
+    'priority' => 20,
+    'panel' => 'colour_data'
+  ));
+
+  $wp_customize->add_setting('colour_bg_setting', array(
+    'default' => '#FDFAFA',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colour_bg_control', array(
+    'label'      => __( 'Background', 'wartheme' ),
+    'section'    => 'colour_bg_section',
+    'settings'   => 'colour_bg_setting'
   )));
 }
 

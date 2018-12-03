@@ -83,16 +83,16 @@ add_action('init', 'add_vet_post_type');
 
 function add_supporters_post_type() {
   $labels = array (
-    'name' => _x('Supporters / Sponsers', 'post type name', 'wartheme'),
-    'singular_name' => _x('Supporter/Sponser', 'post type name', 'wartheme'),
-    'add_new' => _x('Add Supporter/Sponser', 'adding a new Supporter/Sponser', 'wartheme'),
-    'add_new_item' => _x('Add Supporter/Sponser', 'adding a new Supporter/Sponser', 'wartheme'),
-    'edit_item' => _x('Edit Supporter/Sponser', 'edit Supporter/Sponser', 'wartheme'),
+    'name' => _x('Supporters / Sponsors', 'post type name', 'wartheme'),
+    'singular_name' => _x('Supporter/Sponsor', 'post type name', 'wartheme'),
+    'add_new' => _x('Add Supporter/Sponsor', 'adding a new Supporter/Sponsor', 'wartheme'),
+    'add_new_item' => _x('Add Supporter/Sponsor', 'adding a new Supporter/Sponsor', 'wartheme'),
+    'edit_item' => _x('Edit Supporter/Sponsor', 'edit Supporter/Sponsor', 'wartheme'),
   );
 
   $args = array(
     'labels' => $labels,
-    'description' => 'Different Supporters/Sponsers',
+    'description' => 'Different Supporters/Sponsors',
     'public' => true,
     'hierarchical' => true,
     'show_ui' => true,
