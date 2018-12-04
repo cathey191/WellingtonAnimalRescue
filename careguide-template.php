@@ -21,7 +21,7 @@
           <div class="card w-100" style="width: 18rem;">
             <?php
               if( has_post_thumbnail()) {
-                the_post_thumbnail('thumbnail', ['class'=>'card-img-top img-fluid', 'alt'=> 'Image of animal']);
+                the_post_thumbnail('card-top', ['class'=>'card-img-top img-fluid', 'alt'=> 'Image of animal']);
               };
             ?>
             <div class="card-body">

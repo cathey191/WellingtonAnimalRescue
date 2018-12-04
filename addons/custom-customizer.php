@@ -61,7 +61,7 @@ function custom_theme_customizer( $wp_customize ) {
   ));
 
   $wp_customize->add_setting('supporter_content_title_setting', array(
-    'default' => 'Ways to Help',
+    'default' => '',
     'transport' => 'refresh'
   ));
 
@@ -72,7 +72,7 @@ function custom_theme_customizer( $wp_customize ) {
   )));
 
   $wp_customize->add_setting('supporter_supporter_title_setting', array(
-    'default' => 'Sponsors and Supporters',
+    'default' => '',
     'transport' => 'refresh'
   ));
 
@@ -90,7 +90,7 @@ function custom_theme_customizer( $wp_customize ) {
   ));
 
   $wp_customize->add_setting('adoption_content_title_setting', array(
-    'default' => 'Adoption Policy',
+    'default' => '',
     'transport' => 'refresh'
   ));
 

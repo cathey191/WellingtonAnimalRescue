@@ -5,7 +5,7 @@
       <div class="container">
         <h2 class="text-center"><?php the_title(); ?></h2>
 
-        <?php if (get_theme_mod('adoption_content_policy_setting')):?>
+        <?php if (get_theme_mod('adoption_content_policy_setting') && get_theme_mod('adoption_content_title_setting')):?>
           <div class="col w-100 text-center">
             <button class="btn red-btn " data-toggle="modal" data-target="#policyModal" ><?= get_theme_mod('adoption_content_title_setting'); ?></button>
           </div>
