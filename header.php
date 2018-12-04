@@ -18,7 +18,15 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark " role="navigation">
       <div class="container">
-        <a class="navbar-brand" href="<?= bloginfo('home');?>"><?= bloginfo('name'); ?></a>
+        <a class="navbar-brand" href="<?= bloginfo('home');?>">
+          <?php
+            if (get_theme_mod('navbar_logo_text_setting')) {
+              echo get_theme_mod('navbar_logo_text_setting');
+            } else {
+              echo bloginfo('name');
+            }
+          ?>
+        </a>
 
         <?php
           wp_nav_menu( array(

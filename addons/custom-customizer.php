@@ -119,6 +119,34 @@ function custom_theme_customizer( $wp_customize ) {
     'description' => 'This panel holds information that will be on navigation bar'
   ));
 
+  $wp_customize->add_section('navbar_logo_section', array(
+    'title' => __('Logo', 'wartheme'),
+    'priority' => 20,
+    'panel' => 'navbar_data'
+  ));
+
+  $wp_customize->add_setting('navbar_logo_colour_setting', array(
+    'default' => '#FDFAFA',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'navbar_logo_colour_control', array(
+    'label'      => __( 'Logo Colour', 'wartheme' ),
+    'section'    => 'navbar_logo_section',
+    'settings'   => 'navbar_logo_colour_setting'
+  )));
+
+  $wp_customize->add_setting('navbar_logo_text_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'navbar_logo_text_control', array(
+    'label' => __('Logo Text', 'wartheme'),
+    'section' => 'navbar_logo_section',
+    'settings' => 'navbar_logo_text_setting'
+  )));
+
   $wp_customize->add_section('navbar_colours_section', array(
     'title' => __('Colours', 'wartheme'),
     'priority' => 20,
@@ -351,6 +379,10 @@ function custom_theme_customizer_styles() {
 
       .navbar {
         background-color: <?= get_theme_mod('navbar_bgcolor_setting', '#DC544B'); ?>  !important;
+      }
+
+      .navbar-brand {
+        color: <?= get_theme_mod('navbar_logo_colour_setting', '#FDFAFA'); ?>  !important;
       }
 
       .dropdown-menu{
