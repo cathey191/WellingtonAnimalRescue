@@ -55,7 +55,7 @@ function custom_theme_customizer( $wp_customize ) {
 
   // Supporter Page
   $wp_customize->add_section('supporter_page_section', array(
-    'title' => __('Supporter Page', 'wartheme'),
+    'title' => __('Help Us Page', 'wartheme'),
     'priority' => 20,
     'panel' => 'page_data'
   ));
@@ -84,7 +84,7 @@ function custom_theme_customizer( $wp_customize ) {
 
   // Adoption Page
   $wp_customize->add_section('adoption_page_section', array(
-    'title' => __('Adoption Page', 'wartheme'),
+    'title' => __('Adoption Policy', 'wartheme'),
     'priority' => 20,
     'panel' => 'page_data'
   ));
