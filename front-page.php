@@ -12,12 +12,21 @@
         array_push($homePageData, get_theme_mod('front_page_title_setting'), get_theme_mod('front_page_textarea_setting'));
       }
 
+      if (get_theme_mod('front_page_logo_setting')) {
+        $logo = get_theme_mod('front_page_logo_setting');
+      }
+
       if (get_header_image()):
     ?>
       <div class="bg-dark front-page-banner" style="background-image: url(<?= $homeImage; ?>);">
-        <?php if (sizeof($homePageData) === 2):  ?>
+        <?php if (sizeof($homePageData) === 2 || $logo):  ?>
           <div class="container position-relative">
-            <a class="frontScroll" href="#information"><?= get_theme_mod('front_page_title_setting') ?><span class="dashicons dashicons-arrow-down-alt "> </span></a>
+            <?php if ($logo): ?>
+              <img class="frontLogo" src="<?= $logo ?>" alt="Company Logo">
+            <?php endif ?>
+            <?php if (sizeof($homePageData) === 2): ?>
+              <a class="frontScroll" href="#information"><?= get_theme_mod('front_page_title_setting') ?><span class="dashicons dashicons-arrow-down-alt "> </span></a>
+            <?php endif ?>
           </div>
         <?php endif ?>
       </div>

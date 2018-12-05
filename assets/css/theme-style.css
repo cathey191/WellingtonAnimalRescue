@@ -99,10 +99,17 @@ h2 {
 }
 
 .frontScroll {
-   bottom: 1.5em;
-   right: 15px;
-   position: absolute !important;
-   font-size: 1.5rem;
+  bottom: 1.5em;
+  right: 15px;
+  position: absolute !important;
+  font-size: 1.5rem;
+}
+
+.frontLogo {
+  width: 250px;
+  height: auto;
+  bottom: 1.5em;
+  position: absolute !important;
 }
 
 .dashicons{

@@ -10,6 +10,24 @@ function custom_theme_customizer( $wp_customize ) {
     'description' => 'This panel holds information that will be on all pages'
   ));
 
+  // Front Page Logo
+  $wp_customize->add_section('front_page_logo_section', array(
+    'title' => __('Logo', 'wartheme'),
+    'priority' => 20,
+    'panel' => 'page_data'
+  ));
+
+  $wp_customize->add_setting('front_page_logo_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'front_page_logo_control', array(
+    'label'      => __( 'Upload a logo', 'wartheme' ),
+    'section'    => 'front_page_logo_section',
+    'settings'   => 'front_page_logo_setting'
+  )));
+
   // Front Page
   $wp_customize->add_section('front_page_text_section', array(
     'title' => __('Front Page', 'wartheme'),
