@@ -5,29 +5,45 @@
       <div class="container">
         <h2 class="text-center"><?php the_title(); ?></h2>
 
-        <?php if (get_theme_mod('adoption_content_policy_setting') && get_theme_mod('adoption_content_title_setting')):?>
+
+        <?php
+          $policyCon = get_theme_mod('adoption_content_policy_setting');
+          $policyTitle = get_theme_mod('adoption_content_title_setting');
+          $btnTitle = get_theme_mod('adoption_button_title_setting');
+          $btnLink = get_theme_mod('adoption_button_link_setting');
+
+          if ($policyCon && $policyTitle || $btnTitle && $btnLink):
+
+        ?>
           <div class="col w-100 text-center">
-            <button class="btn red-btn " data-toggle="modal" data-target="#policyModal" ><?= get_theme_mod('adoption_content_title_setting'); ?></button>
+            <?php if ($btnTitle && $btnLink): ?>
+              <a class="btn blue-btn" href="<?= get_theme_mod('adoption_button_link_setting'); ?>"><?= get_theme_mod('adoption_button_title_setting'); ?></a>
+            <?php endif; ?>
+            <?php if ($policyCon && $policyTitle): ?>
+              <button class="btn red-btn " data-toggle="modal" data-target="#policyModal" ><?= $policyTitle ?></button>
+            <?php endif; ?>
           </div>
 
-          <div class="modal" id="policyModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title"><?= get_theme_mod('adoption_content_title_setting'); ?></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p><?= get_theme_mod('adoption_content_policy_setting') ?></p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn red-btn" data-dismiss="modal">Close</button>
+          <?php if ($policyCon && $policyTitle): ?>
+            <div class="modal" id="policyModal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title"><?= $policyTitle ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p><?= $policyCon ?></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn red-btn" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          <?php endif; ?>
 
         <?php endif; ?>
 

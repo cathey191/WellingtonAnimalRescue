@@ -112,6 +112,28 @@ function custom_theme_customizer( $wp_customize ) {
     'type' => 'textarea'
   )));
 
+  $wp_customize->add_setting('adoption_button_title_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'adoption_button_title_control', array(
+    'label' => __('Button Title', 'wartheme'),
+    'section' => 'adoption_page_section',
+    'settings' => 'adoption_button_title_setting'
+  )));
+
+  $wp_customize->add_setting('adoption_button_link_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'adoption_button_link_control', array(
+    'label' => __('Button Link', 'wartheme'),
+    'section' => 'adoption_page_section',
+    'settings' => 'adoption_button_link_setting'
+  )));
+
   // Navbar
   $wp_customize->add_panel('navbar_data', array(
     'title' => __('Navigation Bar', 'wartheme'),
