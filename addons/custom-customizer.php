@@ -434,7 +434,7 @@ function custom_theme_customizer_styles() {
 
   ?>
     <style type="text/css">
-      body {
+      body, .modal-content {
         background-color: <?= get_theme_mod('colour_bg_setting', '#FDFAFA'); ?>  !important;
         color: <?= get_theme_mod('colour_text_setting', '#3A171A'); ?>  !important;
       }
