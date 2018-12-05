@@ -28,6 +28,17 @@ function custom_theme_customizer( $wp_customize ) {
     'settings' => 'front_page_title_setting'
   )));
 
+  $wp_customize->add_setting('front_title_colour_control', array(
+    'default' => '#FDFAFA',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'front_title_colour_control', array(
+    'label'      => __( 'Scroll Button Colour', 'wartheme' ),
+    'section'    => 'front_page_text_section',
+    'settings'   => 'front_title_colour_setting'
+  )));
+
   $wp_customize->add_setting('front_page_textarea_setting', array(
     'default' => '',
     'transport' => 'refresh'
@@ -432,6 +443,10 @@ function custom_theme_customizer_styles() {
 
       .home-image-size {
         background-image: url('<?= $front_page_image; ?>') !important;
+      }
+
+      .frontScroll{
+        color: <?= get_theme_mod('front_page_text_section', '#FDFAFA'); ?>  !important;
       }
 
       .cust-btn {

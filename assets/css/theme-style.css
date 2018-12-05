@@ -93,3 +93,18 @@ h2 {
 .media {
   margin-bottom: 1em;
 }
+
+.position-relative{
+  height: inherit;
+}
+
+.frontScroll {
+   bottom: 1.5em;
+   right: 15px;
+   position: absolute !important;
+   font-size: 1.5rem;
+}
+
+.dashicons{
+  vertical-align:middle;
+}
