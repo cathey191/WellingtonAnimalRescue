@@ -3,7 +3,7 @@
   get_header();
 ?>
       <div class="container">
-        <h2 class="text-center"><?php the_title(); ?></h2>
+        <h2 class="text-center pageTitle"><?php the_title(); ?></h2>
 
 
         <?php
