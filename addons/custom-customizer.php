@@ -89,6 +89,17 @@ function custom_theme_customizer( $wp_customize ) {
     'panel' => 'page_data'
   ));
 
+  $wp_customize->add_setting('adoption_notice_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'adoption_notice_control', array(
+    'label' => __('Adoption Notice', 'wartheme'),
+    'section' => 'adoption_page_section',
+    'settings' => 'adoption_notice_setting'
+  )));
+
   $wp_customize->add_setting('adoption_content_title_setting', array(
     'default' => '',
     'transport' => 'refresh'

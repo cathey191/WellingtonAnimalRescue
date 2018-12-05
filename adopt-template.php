@@ -11,11 +11,15 @@
           $policyTitle = get_theme_mod('adoption_content_title_setting');
           $btnTitle = get_theme_mod('adoption_button_title_setting');
           $btnLink = get_theme_mod('adoption_button_link_setting');
+          $notice = get_theme_mod('adoption_notice_setting');
 
-          if ($policyCon && $policyTitle || $btnTitle && $btnLink):
+          if ($policyCon && $policyTitle || $btnTitle && $btnLink || $notice ):
 
         ?>
           <div class="col w-100 text-center">
+            <?php if ($notice): ?>
+              <p><?= $notice ?></p>
+            <?php endif; ?>
             <?php if ($btnTitle && $btnLink): ?>
               <a class="btn blue-btn" href="<?= get_theme_mod('adoption_button_link_setting'); ?>"><?= get_theme_mod('adoption_button_title_setting'); ?></a>
             <?php endif; ?>

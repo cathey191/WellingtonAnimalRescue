@@ -86,3 +86,7 @@ h2 {
 .margin-auto {
   margin: 0 auto;
 }
+
+.media {
+  margin-bottom: 1em;
+}
