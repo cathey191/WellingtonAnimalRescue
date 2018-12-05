@@ -28,7 +28,7 @@ function custom_theme_customizer( $wp_customize ) {
     'settings' => 'front_page_title_setting'
   )));
 
-  $wp_customize->add_setting('front_title_colour_control', array(
+  $wp_customize->add_setting('front_title_colour_setting', array(
     'default' => '#FDFAFA',
     'transport' => 'refresh'
   ));
@@ -446,7 +446,7 @@ function custom_theme_customizer_styles() {
       }
 
       .frontScroll{
-        color: <?= get_theme_mod('front_page_text_section', '#FDFAFA'); ?>  !important;
+        color: <?= get_theme_mod('front_title_colour_setting', '#FDFAFA'); ?>  !important;
       }
 
       .cust-btn {
