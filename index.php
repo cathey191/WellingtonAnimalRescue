@@ -12,10 +12,14 @@
             <div class="d-none d-sm-block col-6 ">
               <?php the_post_thumbnail('medium_large', ['class'=>'card-img-top img-fluid', 'alt'=> 'Image of animal']) ?>
             </div>
-          <?php endif; ?>
-          <div class="col-6">
+            <div class="col-6">
+              <?= the_content(); ?>
+            </div>
+          <?php else: ?>
+          <div class="col">
             <?= the_content(); ?>
           </div>
+          <?php endif; ?>
         </div>
 
       <?php
