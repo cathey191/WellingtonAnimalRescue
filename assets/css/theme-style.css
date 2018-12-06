@@ -9,7 +9,7 @@ h2 {
   font-size: 25px;
 }
 
-.pageTitle {
+.pageTitle, .site-main {
   margin-top: 1em;
 }
 
