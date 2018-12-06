@@ -35,6 +35,10 @@ $metaBoxes = array(
       'animalPairedWith' => array(
         'title' => 'Who is the animal bonded with?',
         'type' => 'text'
+      ),
+      'weblink' => array(
+        'title' => 'Link to bonded animal',
+        'type' => 'text'
       )
     )
   ),

@@ -24,7 +24,10 @@
             <div class="col-sm-6 home-text">
               <h2><?= the_title(); ?></h2>
               <?php if ($bonded): ?>
-                <p>Bonded with <span class="font-md"><?= $bonded ?></span></p>
+                <?php if ($linkBond = get_post_meta($id, 'weblink', true)): ?>
+                  <a class="btn blue-btn" href="<?= $linkBond ?>">View <?= $bonded; ?></a>
+                <?php endif; ?>
+                <p>Bonded with <span class="font-md"><?= $bonded; ?></span></p>
               <?php endif; ?>
               <p>
                 <span class="font-md">Breed: </span><?= get_post_meta($id, 'animalBreed', true) ?><br>
