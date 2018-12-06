@@ -2,7 +2,7 @@
   /* Template Name: Supporters Template */
   get_header();
 ?>
-      <div class="container">
+      <div class="container main">
         <h2 class="text-center pageTitle"><?php the_title(); ?></h2>
 
         <?php
@@ -55,7 +55,6 @@
           endwhile;
           endif;
         ?>
+      </div>
 
-    <?php wp_footer(); ?>
-  </body>
-</html>
+    <?php get_footer(); ?>

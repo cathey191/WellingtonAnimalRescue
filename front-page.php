@@ -35,7 +35,7 @@
 
       if (sizeof($homePageData) === 2):
     ?>
-        <div class="container">
+        <div class="container main">
           <div class="row">
             <div class="col-sm-6 home-text">
               <h2 id="information"><?= get_theme_mod('front_page_title_setting') ?></h2>
@@ -47,7 +47,5 @@
         </div>
     <?php
       endif;
-      wp_footer();
+      get_footer();
     ?>
-  </body>
-</html>
