@@ -488,7 +488,7 @@ function custom_theme_customizer_styles() {
         color: <?= get_theme_mod('colour_card_text_setting', '#3A171A'); ?>  !important;
       }
 
-      .blue-btn {
+      .blue-btn, .button {
         background-color: <?= get_theme_mod('colour_buttons_bg_setting', '#2969A9'); ?>  !important;
         color: <?= get_theme_mod('colour_buttons_text_setting', '#FDFAFA'); ?>  !important;
       }

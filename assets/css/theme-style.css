@@ -48,7 +48,7 @@ h2 {
 }
 
 /* Buttons */
-.btn {
+.btn, .button {
   padding: 0rem .75rem;
   margin-bottom: 1em;
 }

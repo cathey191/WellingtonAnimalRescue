@@ -46,7 +46,7 @@
           if ($navText && $navlink):
         ?>
           <div class="form-inline my-2 my-lg-0">
-            <a class="btn cust-btn my-2 my-sm-0" href="<?= $navlink; ?>"><?= $navText; ?></a>
+            <a class="btn cust-btn my-2 my-sm-0" href="<?= $navlink; ?>" target="_blank"><?= $navText; ?></a>
           </div>
         <?php endif; ?>
 
