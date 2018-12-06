@@ -123,3 +123,8 @@ h2 {
   }
 
 }
+
+/* WooCommerce */
+.input-text, .woocommerce-input-wrapper {
+  width: 100%;
+}
