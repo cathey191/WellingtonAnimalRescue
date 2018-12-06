@@ -120,6 +120,10 @@ a:hover {
   vertical-align:middle;
 }
 
+.margin-left {
+  margin-left: 0.5em;
+}
+
 @media (min-width: 576px){
 
   .modal-dialog {

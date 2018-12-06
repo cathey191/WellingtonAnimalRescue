@@ -111,6 +111,35 @@ function custom_theme_customizer( $wp_customize ) {
     'settings' => 'supporter_supporter_title_setting'
   )));
 
+  // Enquire
+  $wp_customize->add_section('adoption_enquire_section', array(
+    'title' => __('Adoption Enquire Button', 'wartheme'),
+    'priority' => 20,
+    'panel' => 'page_data'
+  ));
+
+  $wp_customize->add_setting('adoption_enquire_text_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'adoption_enquire_text_control', array(
+    'label' => __('Button Text', 'wartheme'),
+    'section' => 'adoption_enquire_section',
+    'settings' => 'adoption_enquire_text_setting'
+  )));
+
+  $wp_customize->add_setting('adoption_enquire_link_setting', array(
+    'default' => '',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'adoption_enquire_link_control', array(
+    'label' => __('Button Link', 'wartheme'),
+    'section' => 'adoption_enquire_section',
+    'settings' => 'adoption_enquire_link_setting'
+  )));
+
   // Adoption Page
   $wp_customize->add_section('adoption_page_section', array(
     'title' => __('Adoption Policy', 'wartheme'),
