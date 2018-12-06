@@ -14,6 +14,13 @@ function addCustomThemeStyles () {
 
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');
 
+// Admin Styles
+function add_admin_custom_styles () {
+  wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/theme-admin.css', array(), '0.0.1', 'all');
+}
+
+add_action('admin_enqueue_scripts', 'add_admin_custom_styles');
+
 // Init functions
 function initFunctions() {
   add_theme_support('menus');

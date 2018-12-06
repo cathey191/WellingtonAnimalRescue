@@ -17,6 +17,10 @@ h2 {
   margin: 2em 0em;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 /* Navbar */
 .navbar {
   font-family: 'Niramit', sans-serif;
@@ -125,6 +129,6 @@ h2 {
 }
 
 /* WooCommerce */
-.input-text, .woocommerce-input-wrapper {
+.woocommerce-input-wrapper {
   width: 100%;
 }

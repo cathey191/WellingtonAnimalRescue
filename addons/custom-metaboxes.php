@@ -91,15 +91,15 @@ function show_metaboxes($post, $args) {
       switch ($field['type']) {
         case 'text':
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-          $output .= '<input type="text" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
+          $output .= '<input type="text" class="customField" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
           break;
         case 'number':
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-          $output .= '<input type="number" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
+          $output .= '<input type="number"  class="customField" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
           break;
         case 'textarea':
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-          $output .= '<textarea name="'.$id.'" >'.$customValues[$id][0].'</textarea><br>';
+          $output .= '<textarea name="'.$id.'" class="customField" >'.$customValues[$id][0].'</textarea><br>';
           break;
         case 'radio':
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
@@ -114,7 +114,7 @@ function show_metaboxes($post, $args) {
           break;
         default:
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-          $output .= '<input type="text" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
+          $output .= '<input type="text" class="customField" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
           break;
       }
     }
