@@ -30,9 +30,15 @@
                 <p>Bonded with <span class="font-md"><?= $bonded; ?></span></p>
               <?php endif; ?>
               <p>
-                <span class="font-md">Breed: </span><?= get_post_meta($id, 'animalBreed', true) ?><br>
-                <span class="font-md">Age: </span>Around <?= get_post_meta($id, 'animalAge', true) ?> years old<br>
-                <span class="font-md">Care Received: </span><?= get_post_meta($id, 'animialCare', true) ?><br>
+                <?php if ($breed = get_post_meta($id, 'animalBreed', true)): ?>
+                  <span class="font-md">Breed: </span><?= $breed; ?><br>
+                <?php endif; ?>
+                <?php if ($animalAge = get_post_meta($id, 'animalAge', true)): ?>
+                  <span class="font-md">Age: </span>Around <?= $animalAge; ?> years old<br>
+                <?php endif; ?>
+                <?php if ($careRec = get_post_meta($id, 'animialCare', true)): ?>
+                  <span class="font-md">Care Received: </span><?= $careRec; ?><br>
+                <?php endif; ?>
               </p>
               <?= the_content(); ?>
               <?php
