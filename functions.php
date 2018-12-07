@@ -54,6 +54,7 @@ add_image_size( 'card-top', 300, 250, array( 'center', 'center' ) ); // Hard cro
 add_theme_support( 'woocommerce' );
 
 // Customizers
+require get_parent_theme_file_path('./addons/educational_alert.php');
 require get_parent_theme_file_path('./addons/custom-customizer.php');
 require get_parent_theme_file_path('./addons/custom-metaboxes.php');
 require get_parent_theme_file_path('./addons/custom-post-types.php');
