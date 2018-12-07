@@ -1,5 +1,5 @@
 <?php
-  /* Template Name: Supporters Template */
+  /* Template Name: Help Us Template */
   get_header();
 ?>
       <div class="container main">
