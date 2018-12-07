@@ -51,10 +51,6 @@ $metaBoxes = array(
       'weblink' => array(
         'title' => 'Website',
         'type' => 'text'
-      ),
-      'allBlurb' => array(
-        'title' => 'Blurb about Supporter/Sponsor',
-        'type' => 'textarea'
       )
     )
   )
@@ -100,10 +96,6 @@ function show_metaboxes($post, $args) {
         case 'number':
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
           $output .= '<input type="number"  class="customField" name="'.$id.'" value="'.$customValues[$id][0].'"><br>';
-          break;
-        case 'textarea':
-          $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
-          $output .= '<textarea name="'.$id.'" class="customField" >'.$customValues[$id][0].'</textarea><br>';
           break;
         case 'radio':
           $output .= '<label for="'.$id.'">'.$field['title'].'</label><br>';
